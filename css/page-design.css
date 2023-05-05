@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  position: relative;
+  border: 0px;
+}
+
+.sidebar-left, .sidebar-right {
+  flex: 1;
+  background-color: #3b2f2f;
+  position: fixed;
+  bottom: 0px;
+  top: 65px;
+  width: 200px;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  z-index: 2;
+}
+
+.sidebar-left {
+  left: 0px;
+  z-index: 1;
+  border-right: 100px;
+}
+.sidebar-right {
+  right: 0px;
+  z-index: 1;
+}
+
+.remainder {
+  border: 2px solid red;
+  margin-left: 100px;
+  right: 200px;
+
+}
+
+.panel-group {
+  background-color: rgb(255, 255, 255);
+  color: white;
+  font-weight: bold;
+  border-top-color: black;
+  border-width: 2px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.panel-heading.toggle-list {
+  background-color: #2273d6;
+}
+.panel-heading.toggle-list h4.panel-title {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: white;
+}
+
+.toggle-list:hover {
+  cursor: pointer;
+}
+.main-content {
+  position: absolute;
+  left: 110px; /* adjust this value to match the width of your left sidebar */
+  right: 15px; /* adjust this value to match the width of your right sidebar */
+  top: 100px;
+  z-index: 0;
+  margin-left: 50px; /* adjust this value to match the width of your left sidebar */
+  margin-right: 150px;
+}
+.panel-body{
+  color: green;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar-left, .sidebar-right {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+  .sidebar-left {
+    border-right: none;
+    left: 0;
+  }
+  .main-content {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .remainder {
+    margin-left: 0;
+    right: 0;
+  }
+  .panel-group {
+    margin-left: 0;
+  }
+}
