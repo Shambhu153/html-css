@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Past Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar"></div>
+        <div class="main-content">
+
+            <h1>4th Semester</h1>
+            <div id="4th-semester-subjects"></div>
+
+            <script>
+        const fourthSemesterSubjects = {
+            "Probability and Statistics": "1DKRJxXPGcwqsoJgioGJA0NLtAeM5lsYk",
+            "Building Drawing": "190jAudf_2zIJeZFm3EcM4bFe53NdYxz0",
+            "Hydraulics": "12JNJ7186G-Evw611wwbq2DG6Icq_MAgs",
+            "Soil Mechanics": "1SaXm7ieE0XtuEtOjubwdlq9kEgtVTsD5",
+            "Surveying II": "1ORgqaNOfF4iIstHTQDpEY2ht5Z8lPju6",
+            "Theory of Structure I": "13zJgDa0qEfnMct0GkXjdL-T8pUrn0z2V",
+            "Engineering Geology II": "1JKtACmDe7g0R5ybEiivWzvsb9UnoZe6A",
+            "Instrumentation I": "174vS7Lvvi_HCw8-73gbZ45OUK0m1nmP_",
+            "Numerical Methods": "1qds4fkIHhqo7bTUs0l774sQhN3Cu83xO",
+            "Electrical Machine I": "11YTKPxRug97T0w4gjpwdlDODhfMNs8uG",
+            "Microprocessor": "17I0W6UmBpY-RdL1SsGg5pljDHWd66HTm",
+            "Power System Analysis I": "1FNz6FtbXnPAsDstcYWoq04Er22p304ku",
+            "Data Structure and Algorithum": "1OYmkxzkFd4MXbI7d3CjxMnj7AbtT5sR0",
+            "Discrete Structure": "1C6UoqGbe9npwRRjfGSsPLa0tUGlZT1Gg",
+            "Advanced Electronics": "1v3XeLFp3AiGZCsqpf8CGowBMhqpYjnzG",
+            "Applied Mathematics": "1cCba_7KvOj6D04CfBd3eqmynPqD0BIJs",
+            "Electrical Machine I for BEL": "191hdCbfNprtpPuCtc0L1YPSAm8xFrwAf"
+        };
+
+                function addSubjectsToPage(subjects, semester) {
+                    const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
+                    for (const [subject, id] of Object.entries(subjects)) {
+                        const subjectDiv = document.createElement("div");
+                        subjectDiv.classList.add("panel", "panel-default");
+
+                        const panelHeadingDiv = document.createElement("div");
+                        panelHeadingDiv.classList.add("panel-heading", "toggle-list");
+                        panelHeadingDiv.setAttribute("data-toggle", "collapse");
+                        panelHeadingDiv.setAttribute("href", `#${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelTitle = document.createElement("h4");
+                        panelTitle.classList.add("panel-title");
+                        panelTitle.textContent = subject;
+
+                        panelHeadingDiv.appendChild(panelTitle);
+
+                        const panelCollapseDiv = document.createElement("div");
+                        panelCollapseDiv.classList.add("panel-collapse", "collapse");
+                        panelCollapseDiv.setAttribute("id", `${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelBodyDiv = document.createElement("div");
+                        panelBodyDiv.classList.add("panel-body");
+
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", `https://drive.google.com/file/d/${id}/preview`);
+                        iframe.setAttribute("width", "100%");
+                        iframe.setAttribute("height", "480");
+
+                        panelBodyDiv.appendChild(iframe);
+
+                        panelCollapseDiv.appendChild(panelBodyDiv);
+
+                        subjectDiv.appendChild(panelHeadingDiv);
+                        subjectDiv.appendChild(panelCollapseDiv);
+
+                        subjectsDiv.appendChild(subjectDiv);
+
+                    }
+                }
+
+                addSubjectsToPage(fourthSemesterSubjects, "4th Semester");
+               
+
+    // Add function calls to display subjects for the rest of the semesters and electives
+            </script>
+            <script src="../js/header.js ">
+                
+            </script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+        </div>
+    </div>
+</body>
+
+</html>

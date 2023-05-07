@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Past Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar"></div>
+        <div class="main-content">
+
+            <h1>Elective I</h1>
+            <div id="elective1-subjects"></div>
+
+            <script>
+const elective1Subjects = {
+  "Bio-Engineering": "1VIrBUOkJZ5q0FhHxnevpd96TddLPfk4n",
+  "Structural Dynamics": "18HmLjkCXo6Busx4HNguuWUspC2i1I17r",
+  "Transportation planning and engineering": "113_WNbz-fnZD0jUT1o7peGTI-6GhpnZT",
+  "Rural Electrification": "1BoW9kQuerAf8ge0c9s7iVabz2HNyZgCw",
+  "Electrical Energy System Management": "1TvD3W1r7eG_gaFlUKos2t4HLw70uyJAy",
+  "Advanced Java Programming": "17wHAMV3ZdoQDB7iislM68GLjop1Kn1Hd",
+  "Data Mining": "1VJ-1D6MRSLZ97gucABwuli2hZPW3VnZ2",
+  "Satellite Communication": "16pzMVBMG_N5n1LlN1ok_EjNFElGVfInj",
+  "Biomedical Instruction": "15fHH7XudpRqVx2gTOy_V5JjJw5-kcYzn"
+};
+                function addSubjectsToPage(subjects, semester) {
+                    const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
+                    for (const [subject, id] of Object.entries(subjects)) {
+                        const subjectDiv = document.createElement("div");
+                        subjectDiv.classList.add("panel", "panel-default");
+
+                        const panelHeadingDiv = document.createElement("div");
+                        panelHeadingDiv.classList.add("panel-heading", "toggle-list");
+                        panelHeadingDiv.setAttribute("data-toggle", "collapse");
+                        panelHeadingDiv.setAttribute("href", `#${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelTitle = document.createElement("h4");
+                        panelTitle.classList.add("panel-title");
+                        panelTitle.textContent = subject;
+
+                        panelHeadingDiv.appendChild(panelTitle);
+
+                        const panelCollapseDiv = document.createElement("div");
+                        panelCollapseDiv.classList.add("panel-collapse", "collapse");
+                        panelCollapseDiv.setAttribute("id", `${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelBodyDiv = document.createElement("div");
+                        panelBodyDiv.classList.add("panel-body");
+
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", `https://drive.google.com/file/d/${id}/preview`);
+                        iframe.setAttribute("width", "100%");
+                        iframe.setAttribute("height", "480");
+
+                        panelBodyDiv.appendChild(iframe);
+
+                        panelCollapseDiv.appendChild(panelBodyDiv);
+
+                        subjectDiv.appendChild(panelHeadingDiv);
+                        subjectDiv.appendChild(panelCollapseDiv);
+
+                        subjectsDiv.appendChild(subjectDiv);
+
+                    }
+                }
+
+                addSubjectsToPage(elective1Subjects, "elective1");
+               
+
+    // Add function calls to display subjects for the rest of the semesters and electives
+            </script>
+            <script src="../js/header.js ">
+                
+            </script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+        </div>
+    </div>
+</body>
+
+</html>

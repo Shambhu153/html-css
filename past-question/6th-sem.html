@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Past Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar"></div>
+        <div class="main-content">
+
+            <h1>6th Semester</h1>
+            <div id="6th-semester-subjects"></div>
+
+            <script>
+                const sixthSemesterSubjects = {
+                    "Transportation Engineering": "1Z3bskRn1UVIpOE-4MbxrN6W0qRITbp15",
+                    "Sanitary Engineering": "13cMiHRDMUvhlC24Lu12Y90ZKHI6iyJhX",
+                    "Irrigation and Drainage Engineering": "1BIcVxahT4wdKIOq4xsugueTSqyC3ns40",
+                    "Engineering Economics": "1nhuAxWuNEgp3vhlbzpMZw24_IECWSHbp",
+                    "Design of Steel and Timber Structure": "1yeE2Sx83px3kf_XsnZvk5TxTmb5ut387",
+                    "Building Technology": "1M9G-Q8tfrKFxilw250MDieTtLw9Y3kEd",
+                    "Communication English": "1fU42z2uw2VP7k9tqaUdoYl1sQRByZ2d5",
+                    "Digital Control System": "13tcRAkdnlkaJes9_uUaglem3n0mGAjmA",
+                    "Hydropower": "1ZisMWC2K5BRS32rMk9BucOgbIGtSfvNQ",
+                    "Industrial Power Distribution": "1ZL23RbO1n1yeEysfjm4y25R4y667Vs2k",
+                    "Signal Analysis": "1vraI3Al_DVgko7mOFTjNnntkxA6nN_c_",
+                    "Switchgear and Protection": "1DLJt_wNVvjLCfSLcmh0W7gIBHRaf4ruF",
+                    "Artificial Intelligence": "1N7tHnADrzw0FTiygoXKzAHhxnUcZolrC",
+                    "Database Management System": "1aVU4ginXUNin-Uym96kvzXdunflFzQLK",
+                    "Embedded System": "1TT23Hu_14JLx7fS6gzLJISDvFSGG1CPo",
+                    "Object Oriented Analysis and Design": "1ZanGNFQgZa37qNJWxGnv2A_ZANKPxEVf",
+                    "Operating System": "1K-zvfQWK8xZUc79qCe2iord8WC0EVZ-t",
+                    "Communication System I": "1RMjOnc1cLF4X8c5R1gCONtgZNOvv4M-M",
+                    "Propagation and Antenna": "1tv0-xG7eqtKksz8lWdZsspPtkZY9YndG"
+                    "Computer Network": "1YJ2Xq9Z41mnkb2IVysYG54Kg41Gx5IW_"
+                };
+                function addSubjectsToPage(subjects, semester) {
+                    const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
+                    for (const [subject, id] of Object.entries(subjects)) {
+                        const subjectDiv = document.createElement("div");
+                        subjectDiv.classList.add("panel", "panel-default");
+
+                        const panelHeadingDiv = document.createElement("div");
+                        panelHeadingDiv.classList.add("panel-heading", "toggle-list");
+                        panelHeadingDiv.setAttribute("data-toggle", "collapse");
+                        panelHeadingDiv.setAttribute("href", `#${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelTitle = document.createElement("h4");
+                        panelTitle.classList.add("panel-title");
+                        panelTitle.textContent = subject;
+
+                        panelHeadingDiv.appendChild(panelTitle);
+
+                        const panelCollapseDiv = document.createElement("div");
+                        panelCollapseDiv.classList.add("panel-collapse", "collapse");
+                        panelCollapseDiv.setAttribute("id", `${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelBodyDiv = document.createElement("div");
+                        panelBodyDiv.classList.add("panel-body");
+
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", `https://drive.google.com/file/d/${id}/preview`);
+                        iframe.setAttribute("width", "100%");
+                        iframe.setAttribute("height", "480");
+
+                        panelBodyDiv.appendChild(iframe);
+
+                        panelCollapseDiv.appendChild(panelBodyDiv);
+
+                        subjectDiv.appendChild(panelHeadingDiv);
+                        subjectDiv.appendChild(panelCollapseDiv);
+
+                        subjectsDiv.appendChild(subjectDiv);
+
+                    }
+                }
+
+                addSubjectsToPage(sixthSemesterSubjects, "6th Semester");
+
+
+    // Add function calls to display subjects for the rest of the semesters and electives
+            </script>
+            <script src="../js/header.js ">
+
+            </script>
+            <script> fetch('../sidebar.html')
+                    .then(response => response.text())
+                    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+        </div>
+    </div>
+</body>
+
+</html>

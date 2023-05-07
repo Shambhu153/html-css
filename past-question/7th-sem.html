@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Past Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar"></div>
+        <div class="main-content">
+
+            <h1>7th Semester</h1>
+            <div id="7th-semester-subjects"></div>
+
+            <script>
+const seventhSemesterSubjects = {
+  "Hydropower Engineering": "1f4q0Gk66ggBD1ONkDC3rJcl82VVPCKh8",
+  "Project Engineering": "1kHZQNmJZBslW_5OVz3e2jntCblrcWj3o",
+  "Transportation Engineering II": "1PrtPecM60nwGpZ_HRuY_feydRg8oG22S",
+  "Design of RCC Structure": "1VspzD4SpDLEhDXSvq62rMuwPpJBlJ_hu",
+  "Estimating _ Costing": "1vc0K2RKAPqt4xsNXhe9KodDLoEm7CGm6",
+  "Organization and Management": "1fJmcEnWHLAqTljYknnWhh82ZdR7ozsb7",
+  "Power Electronics": "1Vy3CvmelUjJcn_QYpdZOZM4LOQTCafna",
+  "Power Plant Equipment": "13iJNPZf28XdFVjeiOv5wd4WGinPjU_CN",
+  "Technology Environment and Society": "1rgD9R0stmI_EXTAfV6k_s5H-DIe0wHCR",
+  "Utilization of Electrical Energy": "12RYUQ3hNufRspD-8vHPPQqaurIFNQhGi",
+  "Project Management": "171pkASqJfrRWNSizTjXQKX6h86cSBxMu",
+  "Computer Network": "17X-BH-qT4NgZeF52q_VhNLEx7ih2RA83",
+  "Energy Environment _ Society": "1OvkUU_OJ6dcdtiYcguhJKiky9vLT7y3l",
+  "Distributed System": "1zPns5hnbre8HYyNfDxN0Tt4Ii5SxMSSb",
+  "Digital Signal Analysis _ Processing": "12RYUQ3hNufRspD-8vHPPQqaurIFNQhGi",
+  "Filter Design_old course": "1y2W5S6jAhiJBs6G708Un2DsyoW0CCjbf",
+  "Communication Systems II_old course": "1hKRg4qB9FtrRF9bmSDBopzs9Rwf7nmcM",
+  "Telecommunication_old course": "1851-9ScnM-h0IBKa0V4cIHVke_0xYKic"
+};
+
+
+                function addSubjectsToPage(subjects, semester) {
+                    const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
+                    for (const [subject, id] of Object.entries(subjects)) {
+                        const subjectDiv = document.createElement("div");
+                        subjectDiv.classList.add("panel", "panel-default");
+
+                        const panelHeadingDiv = document.createElement("div");
+                        panelHeadingDiv.classList.add("panel-heading", "toggle-list");
+                        panelHeadingDiv.setAttribute("data-toggle", "collapse");
+                        panelHeadingDiv.setAttribute("href", `#${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelTitle = document.createElement("h4");
+                        panelTitle.classList.add("panel-title");
+                        panelTitle.textContent = subject;
+
+                        panelHeadingDiv.appendChild(panelTitle);
+
+                        const panelCollapseDiv = document.createElement("div");
+                        panelCollapseDiv.classList.add("panel-collapse", "collapse");
+                        panelCollapseDiv.setAttribute("id", `${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelBodyDiv = document.createElement("div");
+                        panelBodyDiv.classList.add("panel-body");
+
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", `https://drive.google.com/file/d/${id}/preview`);
+                        iframe.setAttribute("width", "100%");
+                        iframe.setAttribute("height", "480");
+
+                        panelBodyDiv.appendChild(iframe);
+
+                        panelCollapseDiv.appendChild(panelBodyDiv);
+
+                        subjectDiv.appendChild(panelHeadingDiv);
+                        subjectDiv.appendChild(panelCollapseDiv);
+
+                        subjectsDiv.appendChild(subjectDiv);
+
+                    }
+                }
+
+                addSubjectsToPage(seventhSemesterSubjects, "7th Semester");
+               
+
+    // Add function calls to display subjects for the rest of the semesters and electives
+            </script>
+            <script src="../js/header.js ">
+                
+            </script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+        </div>
+    </div>
+</body>
+
+</html>

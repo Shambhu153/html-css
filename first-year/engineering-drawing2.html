@@ -6,9 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/page-design.css">
-    <link rel="stylesheet" href="../css/header-sidebar.css">
-    <title>Engineering-Drawing II</title>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Engineering Drawing II</title>
 </head>
 
 <body>
@@ -16,17 +16,62 @@
     <div class="container">
         <div id="sidebar"></div>
         <div class="main-content">
-
+            <h2>Engineering Drawing II</h2>
+            <h6 style="border: 3px solid #ff0000; padding: 1em 1em 1em 21px;">
+                <span style="color: #007e94;"><strong>Reminder:</strong></span> Take at least 1 day to initially study before the exam. 
+            </br></br><span style="color: #008000;">Here are some tips:</span> Building drawing is an easy subject and can be read directly in the exam. The tutorial in the class is enough for the exam, but if you haven't done it, don't worry, you can learn from your friend. Allocate 3 days to secure good marks and remember that the theory portion is key to achieving great marks. It is easy and simple, just use the formula. 
+            </h6>
+            </h6>
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle-list" data-toggle="collapse" href="#syllabus">
+                        <h4 class="panel-title">Syllabus</h4>
+                    </div>
+                    <div id="syllabus" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            i think i can
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle-list" data-toggle="collapse" href="#material">
+                        <h4 class="panel-title">Material</h4>
+                    </div>
+                    <div id="material" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            ............../material
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle-list" data-toggle="collapse" href="#youtube-video">
+                        <h4 class="panel-title">YouTube Video</h4>
+                    </div>
+                    <div id="youtube-video" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            ........../yt-video
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading toggle-list" data-toggle="collapse" href="#past-question">
+                        <h4 class="panel-title">Past Question</h4>
+                    </div>
+                    <div id="past-question" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            ........../past question
+                        </div>
                     </div>
                 </div>
             </div>
-    </div>
-    <script src="../js/header.js "></script>
-    <script>
-        fetch('../sidebar.html')
-          .then(response => response.text())
-          .then(data => document.querySelector('#sidebar').innerHTML = data);
-      </script>
+            
+        </div>
+        <script src="../js/header.js "></script>
+        <script>
+            fetch('../sidebar.html')
+                .then(response => response.text())
+                .then(data => document.querySelector('#sidebar').innerHTML = data);
+        </script>
 </body>
 
 </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/page-design_sidebar.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <title>Past Question</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar"></div>
+        <div class="main-content">
+
+            <h1>8th Semester</h1>
+            <div id="8th-semester-subjects"></div>
+
+            <script>
+const eighthSemesterSubjects = {
+  "Engineering Professional Practice": "1xVOExH41uvMUkg9lk-xRBkg9B6nM7d52",
+  "Technology Environment and Society": "19QNC1gOz6q9ZaC5jG1AokWWWmWKj7Wvv",
+  "Computational Techniques in Civil Engineering": "1U2l8dtGyi__4ULr8GgLCItVkNaN1qvX4",
+  "Construction Management": "1Ag3SoJr5wmNt1WHvl69a03HNdHAvJ8yd",
+  "Transmission and Distribution": "1OaEpEd80D_Vjnot7GdZNr4rHLuhJsbVV",
+  "Power Plant Design": "1QenxlB6CjQYNPm2nLaCoDR7ifjEVok8A",
+  "High Voltage Engineering": "10jiEA6cviXtcNocpa_yTY_jbFsKoSzQZ",
+  "Information System": "1eSky2LvFXjsxgZNjA3Y3I23-DihJI6B1",
+  "Internet and Intranet": "1LLu60K5AYqt3ljgOyu9thyijzM6vksU8",
+  "Simulation and Modeling": "1obmbS9ecPQUAzLXvi1Asy6NP2V4DSEMA",
+  "Digital Signal Processing": "1Rw7F-ADn93GxL9K8e3rF3PoxvlVO8qCq",
+  "Wireless Communication": "1Hgn6klWTLooY-3kKAHTKUkXMOK-Kxp0y",
+  "RF Microwave Engineering":"1HCliq06rKI4nHucVm0rwJCj2Xwuy943G"
+};
+                function addSubjectsToPage(subjects, semester) {
+                    const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
+                    for (const [subject, id] of Object.entries(subjects)) {
+                        const subjectDiv = document.createElement("div");
+                        subjectDiv.classList.add("panel", "panel-default");
+
+                        const panelHeadingDiv = document.createElement("div");
+                        panelHeadingDiv.classList.add("panel-heading", "toggle-list");
+                        panelHeadingDiv.setAttribute("data-toggle", "collapse");
+                        panelHeadingDiv.setAttribute("href", `#${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelTitle = document.createElement("h4");
+                        panelTitle.classList.add("panel-title");
+                        panelTitle.textContent = subject;
+
+                        panelHeadingDiv.appendChild(panelTitle);
+
+                        const panelCollapseDiv = document.createElement("div");
+                        panelCollapseDiv.classList.add("panel-collapse", "collapse");
+                        panelCollapseDiv.setAttribute("id", `${subject.toLowerCase().replace(/ /g, "-")}`);
+
+                        const panelBodyDiv = document.createElement("div");
+                        panelBodyDiv.classList.add("panel-body");
+
+                        const iframe = document.createElement("iframe");
+                        iframe.setAttribute("src", `https://drive.google.com/file/d/${id}/preview`);
+                        iframe.setAttribute("width", "100%");
+                        iframe.setAttribute("height", "480");
+
+                        panelBodyDiv.appendChild(iframe);
+
+                        panelCollapseDiv.appendChild(panelBodyDiv);
+
+                        subjectDiv.appendChild(panelHeadingDiv);
+                        subjectDiv.appendChild(panelCollapseDiv);
+
+                        subjectsDiv.appendChild(subjectDiv);
+
+                    }
+                }
+
+                addSubjectsToPage(eighthSemesterSubjects, "8th Semester");
+               
+
+    // Add function calls to display subjects for the rest of the semesters and electives
+            </script>
+            <script src="../js/header.js ">
+                
+            </script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+        </div>
+    </div>
+</body>
+
+</html>
