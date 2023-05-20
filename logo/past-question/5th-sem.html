@@ -11,6 +11,7 @@
     <title>Past Question</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495182113731970"
      crossorigin="anonymous"></script>
+<link rel="icon" type="image/png" href="https://th.bing.com/th/id/OIP.zB7BMGSl7d7pEfHbXdGHUwAAAA?pid=ImgDet&rs=1">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS23PHR5LM"></script>
@@ -26,39 +27,32 @@
     <div class="container">
         <div id="sidebar"></div>
         <div class="main-content">
-            <h1 style="top: 100px;,margin-top: 30px;">1st Semester</h1>
-            <div id="1st-semester-subjects"></div>
 
-            <h1>2nd Semester</h1>
-            <div id="2nd-semester-subjects"></div>
+            <h1>5th Semester</h1>
+            <div id="5th-semester-subjects"></div>
 
             <script>
-                const firstSemesterSubjects = {
-                    "Basic Electrical Engineering": "1-kMxVFr8PeG5GIzXo3j0AKJxaQwLcGOV",
-                    "C Programming": "1Q6gDdxMlk1AdCE9RvOa6dMi7hg4uY3f-",
-                    "Applied mechanics": "1QeVPrLn7hMqiJCAcEfoKeMJI4dXNwNQ9",
-                    "Engineering Drawing I": "1mR4-Cd47hsFaKw3vaKa-lCkQCmbp87Tp",
-                    "Engineering Mathematics I": "17YBnh3mndhKHks1cqmq9MHkwHq1K3WzX",
-                    "Engineering Physics": "1IZHFVH9IMXg63WFpVhA1lHKSeajw5Vqs",
-                    "Engineering Chemistry": "1JVlLEv6ZI-s27uWMXSPuMKT9vst2HsgM",
-                    "Thermodynamics": "15fh8geT-vEJDa3DpzlwZKacjGB45Kmcw",
-                    "Digital Logic": "15fh8geT-vEJDa3DpzlwZKacjGB45Kmcw"
-                };
-
-                const secondSemesterSubjects = {
-                    "Applied Mechanics": "11h3yrKF3RW-oR0tO-TPoHqf16i0pnx9s",
-                    "Basic Electrical Engineering": "1X1tUKHSbRotUVBFi_QXOyOYJOGGeEDhL",
-                    "Engineering Physics": "1IZHFVH9IMXg63WFpVhA1lHKSeajw5Vqs",
-                    "Basic Electronics Engineering": "1VCANqaymgxx9DFGXfHWKzMnScjMNuP8r",
-                    "Engineering Drawing II": "1EekarpM04Zti7EInJH6Cf1tkK5rpGDIz",
-                    "Engineering Mathematics II": "1KQ0zMXQmyBx_Wgu2o1aft3xp-SwnOAUJ",
-                    "Microprocessor": "1KQsdCuXmSdGRx9F0BW66rxEtSexdnKcA",
-                    "Electric Circuits and Machine": "1p4x6evn2QqngxT88rzFLW35AUAsTqIZX",
-                    "Object Oriented Programming": "1I78JBNAZwA97txUdqeX1aIQFpjcScLQh",
-                    "Fundamentals of Thermodynamics": "1scXbStT9bV1TgZQl012ofEQwDkQOi-Yv"
-                };
-
-
+const fifthSemesterSubjects = {
+            "Concrete Technology": "1w3FXS-JWoagyMYr_HsTYF0e7bRQB3uUB",
+            "Engineering Hydrology": "1aY6H-oYgT1EmtuUq4ocSnDf4H_pSaL3V",
+            "Foundation Engineering": "1bK_F3CY9AclkcZ-L8z3lf6UtQsfSpNZ8",
+            "Numerical Methods": "1CwuPQZyebMjuJ-AJDyIF7O-ODPL8opeA",
+            "Theory of Structures": "12sFfnIw14aTkBfnnT8a4a9fNXfAs76do",
+            "Water Supply Engineering": "1DQncD1kZJj-wueYaenPMs4ZQ3Fnqy4tk",
+            "Probability and Statistics": "1KGkK2NYYXo8HtFUO89IiB9PDBzymnz_m",
+            "Electrical Machine Design": "1eSkqPUMLIrJ2p2hVo_QOmRnd7l-6lG7F",
+            "Instrumentation II": "1HVXButXydFZtoyE3vZP87dyiN9wYxOLj",
+            "Control System": "1Kqb6CB_tNroI-UXhPOzFunDSlO1oNhqZ",
+            "Communication English": "1CeoDSC16FuVpQF7gf0PN9dhlrUJyGTWa",
+            "Power System Analysis II": "1jE1QTJdqQI-KpOAub2IQmmKrP0wR_65N",
+            "Electrical Machine II": "1ecbOQ2Xh6lNFI3bUx5JZthbellZ0LlkB",
+            "Computer Graphics": "1sqCD5YB4b3ns4FBfAhPACQ0CQqWpnj1J",
+            "Computer Organization Architecture": "1rEP09LO4msAp9Xsw3mPcuhkxJq8vX2T3",
+            "Data Communication": "1uJlzo63dkdWlSfz95ZNmquKoEh1x6Gss",
+            "Software Engineering": "1n44ohPmiQbFANKEZ3T_x7xJ8jV3TzLVv",
+            "Advanced Electronics": "1v3XeLFp3AiGZCsqpf8CGowBMhqpYjnzG",
+            "Computer Network": "1bw0dxSCosIEFAPDKLm66JxutKq8wND04"
+        };
                 function addSubjectsToPage(subjects, semester) {
                     const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
                     for (const [subject, id] of Object.entries(subjects)) {
@@ -100,17 +94,17 @@
                     }
                 }
 
-                addSubjectsToPage(firstSemesterSubjects, "1st Semester");
-                addSubjectsToPage(secondSemesterSubjects, "2nd Semester");
+                addSubjectsToPage(fifthSemesterSubjects, "5th Semester");
+               
 
     // Add function calls to display subjects for the rest of the semesters and electives
             </script>
             <script src="../js/header.js ">
-
+                
             </script>
-            <script> fetch('../sidebar.html')
-                    .then(response => response.text())
-                    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
         </div>
     </div>
 </body>

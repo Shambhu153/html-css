@@ -11,6 +11,7 @@
     <title>Past Question</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495182113731970"
      crossorigin="anonymous"></script>
+<link rel="icon" type="image/png" href="https://th.bing.com/th/id/OIP.zB7BMGSl7d7pEfHbXdGHUwAAAA?pid=ImgDet&rs=1">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS23PHR5LM"></script>
@@ -21,37 +22,27 @@
 
   gtag('config', 'G-KS23PHR5LM');
 </script>
+
 <body>
     <div class="container">
         <div id="sidebar"></div>
         <div class="main-content">
 
-            <h1>6th Semester</h1>
-            <div id="6th-semester-subjects"></div>
+            <h1>Elective I</h1>
+            <div id="elective1-subjects"></div>
 
             <script>
-                const sixthSemesterSubjects = {
-                    "Transportation Engineering": "1Z3bskRn1UVIpOE-4MbxrN6W0qRITbp15",
-                    "Sanitary Engineering": "13cMiHRDMUvhlC24Lu12Y90ZKHI6iyJhX",
-                    "Irrigation and Drainage Engineering": "1BIcVxahT4wdKIOq4xsugueTSqyC3ns40",
-                    "Engineering Economics": "1nhuAxWuNEgp3vhlbzpMZw24_IECWSHbp",
-                    "Design of Steel and Timber Structure": "1yeE2Sx83px3kf_XsnZvk5TxTmb5ut387",
-                    "Building Technology": "1M9G-Q8tfrKFxilw250MDieTtLw9Y3kEd",
-                    "Communication English": "1fU42z2uw2VP7k9tqaUdoYl1sQRByZ2d5",
-                    "Digital Control System": "13tcRAkdnlkaJes9_uUaglem3n0mGAjmA",
-                    "Hydropower": "1ZisMWC2K5BRS32rMk9BucOgbIGtSfvNQ",
-                    "Industrial Power Distribution": "1ZL23RbO1n1yeEysfjm4y25R4y667Vs2k",
-                    "Signal Analysis": "1vraI3Al_DVgko7mOFTjNnntkxA6nN_c_",
-                    "Switchgear and Protection": "1DLJt_wNVvjLCfSLcmh0W7gIBHRaf4ruF",
-                    "Artificial Intelligence": "1N7tHnADrzw0FTiygoXKzAHhxnUcZolrC",
-                    "Database Management System": "1aVU4ginXUNin-Uym96kvzXdunflFzQLK",
-                    "Embedded System": "1TT23Hu_14JLx7fS6gzLJISDvFSGG1CPo",
-                    "Object Oriented Analysis and Design": "1ZanGNFQgZa37qNJWxGnv2A_ZANKPxEVf",
-                    "Operating System": "1K-zvfQWK8xZUc79qCe2iord8WC0EVZ-t",
-                    "Communication System I": "1RMjOnc1cLF4X8c5R1gCONtgZNOvv4M-M",
-                    "Propagation and Antenna": "1tv0-xG7eqtKksz8lWdZsspPtkZY9YndG",
-                    "Computer Network": "1YJ2Xq9Z41mnkb2IVysYG54Kg41Gx5IW_"
-                };
+const elective1Subjects = {
+  "Bio-Engineering": "1VIrBUOkJZ5q0FhHxnevpd96TddLPfk4n",
+  "Structural Dynamics": "18HmLjkCXo6Busx4HNguuWUspC2i1I17r",
+  "Transportation planning and engineering": "113_WNbz-fnZD0jUT1o7peGTI-6GhpnZT",
+  "Rural Electrification": "1BoW9kQuerAf8ge0c9s7iVabz2HNyZgCw",
+  "Electrical Energy System Management": "1TvD3W1r7eG_gaFlUKos2t4HLw70uyJAy",
+  "Advanced Java Programming": "17wHAMV3ZdoQDB7iislM68GLjop1Kn1Hd",
+  "Data Mining": "1VJ-1D6MRSLZ97gucABwuli2hZPW3VnZ2",
+  "Satellite Communication": "16pzMVBMG_N5n1LlN1ok_EjNFElGVfInj",
+  "Biomedical Instruction": "15fHH7XudpRqVx2gTOy_V5JjJw5-kcYzn"
+};
                 function addSubjectsToPage(subjects, semester) {
                     const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
                     for (const [subject, id] of Object.entries(subjects)) {
@@ -93,17 +84,17 @@
                     }
                 }
 
-                addSubjectsToPage(sixthSemesterSubjects, "6th Semester");
-
+                addSubjectsToPage(elective1Subjects, "elective1");
+               
 
     // Add function calls to display subjects for the rest of the semesters and electives
             </script>
             <script src="../js/header.js ">
-
+                
             </script>
-            <script> fetch('../sidebar.html')
-                    .then(response => response.text())
-                    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+<script> fetch('../sidebar.html')
+    .then(response => response.text())
+    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
         </div>
     </div>
 </body>

@@ -11,6 +11,7 @@
     <title>Past Question</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7495182113731970"
      crossorigin="anonymous"></script>
+<link rel="icon" type="image/png" href="https://th.bing.com/th/id/OIP.zB7BMGSl7d7pEfHbXdGHUwAAAA?pid=ImgDet&rs=1">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KS23PHR5LM"></script>
@@ -26,22 +27,39 @@
     <div class="container">
         <div id="sidebar"></div>
         <div class="main-content">
+            <h1 style="top: 100px;,margin-top: 30px;">1st Semester</h1>
+            <div id="1st-semester-subjects"></div>
 
-            <h1>Elective I</h1>
-            <div id="elective1-subjects"></div>
+            <h1>2nd Semester</h1>
+            <div id="2nd-semester-subjects"></div>
 
             <script>
-const elective1Subjects = {
-  "Bio-Engineering": "1VIrBUOkJZ5q0FhHxnevpd96TddLPfk4n",
-  "Structural Dynamics": "18HmLjkCXo6Busx4HNguuWUspC2i1I17r",
-  "Transportation planning and engineering": "113_WNbz-fnZD0jUT1o7peGTI-6GhpnZT",
-  "Rural Electrification": "1BoW9kQuerAf8ge0c9s7iVabz2HNyZgCw",
-  "Electrical Energy System Management": "1TvD3W1r7eG_gaFlUKos2t4HLw70uyJAy",
-  "Advanced Java Programming": "17wHAMV3ZdoQDB7iislM68GLjop1Kn1Hd",
-  "Data Mining": "1VJ-1D6MRSLZ97gucABwuli2hZPW3VnZ2",
-  "Satellite Communication": "16pzMVBMG_N5n1LlN1ok_EjNFElGVfInj",
-  "Biomedical Instruction": "15fHH7XudpRqVx2gTOy_V5JjJw5-kcYzn"
-};
+                const firstSemesterSubjects = {
+                    "Basic Electrical Engineering": "1-kMxVFr8PeG5GIzXo3j0AKJxaQwLcGOV",
+                    "C Programming": "1Q6gDdxMlk1AdCE9RvOa6dMi7hg4uY3f-",
+                    "Applied mechanics": "1QeVPrLn7hMqiJCAcEfoKeMJI4dXNwNQ9",
+                    "Engineering Drawing I": "1mR4-Cd47hsFaKw3vaKa-lCkQCmbp87Tp",
+                    "Engineering Mathematics I": "17YBnh3mndhKHks1cqmq9MHkwHq1K3WzX",
+                    "Engineering Physics": "1IZHFVH9IMXg63WFpVhA1lHKSeajw5Vqs",
+                    "Engineering Chemistry": "1JVlLEv6ZI-s27uWMXSPuMKT9vst2HsgM",
+                    "Thermodynamics": "15fh8geT-vEJDa3DpzlwZKacjGB45Kmcw",
+                    "Digital Logic": "15fh8geT-vEJDa3DpzlwZKacjGB45Kmcw"
+                };
+
+                const secondSemesterSubjects = {
+                    "Applied Mechanics": "11h3yrKF3RW-oR0tO-TPoHqf16i0pnx9s",
+                    "Basic Electrical Engineering": "1X1tUKHSbRotUVBFi_QXOyOYJOGGeEDhL",
+                    "Engineering Physics": "1IZHFVH9IMXg63WFpVhA1lHKSeajw5Vqs",
+                    "Basic Electronics Engineering": "1VCANqaymgxx9DFGXfHWKzMnScjMNuP8r",
+                    "Engineering Drawing II": "1EekarpM04Zti7EInJH6Cf1tkK5rpGDIz",
+                    "Engineering Mathematics II": "1KQ0zMXQmyBx_Wgu2o1aft3xp-SwnOAUJ",
+                    "Microprocessor": "1KQsdCuXmSdGRx9F0BW66rxEtSexdnKcA",
+                    "Electric Circuits and Machine": "1p4x6evn2QqngxT88rzFLW35AUAsTqIZX",
+                    "Object Oriented Programming": "1I78JBNAZwA97txUdqeX1aIQFpjcScLQh",
+                    "Fundamentals of Thermodynamics": "1scXbStT9bV1TgZQl012ofEQwDkQOi-Yv"
+                };
+
+
                 function addSubjectsToPage(subjects, semester) {
                     const subjectsDiv = document.getElementById(`${semester.toLowerCase().replace(/ /g, "-")}-subjects`);
                     for (const [subject, id] of Object.entries(subjects)) {
@@ -83,17 +101,17 @@ const elective1Subjects = {
                     }
                 }
 
-                addSubjectsToPage(elective1Subjects, "elective1");
-               
+                addSubjectsToPage(firstSemesterSubjects, "1st Semester");
+                addSubjectsToPage(secondSemesterSubjects, "2nd Semester");
 
     // Add function calls to display subjects for the rest of the semesters and electives
             </script>
             <script src="../js/header.js ">
-                
+
             </script>
-<script> fetch('../sidebar.html')
-    .then(response => response.text())
-    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
+            <script> fetch('../sidebar.html')
+                    .then(response => response.text())
+                    .then(data => document.querySelector('#sidebar').innerHTML = data);</script>
         </div>
     </div>
 </body>
